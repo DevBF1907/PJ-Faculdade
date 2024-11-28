@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro e Opinião</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Entre em Contato Conosco</h1>
+        <nav>
+            <ul>
+                <li><a href="Intro.html">Apresentação</a></li>
+                <li><a href="galeria.html">Curiosidades</a></li>
+                <!-- Removido o link de Cadastro da navegação da Home -->
+                <!-- <li><a href="cadastro.html">Cadastro</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main id="cadastro">
+        <h2>Cadastre-se e Envie Sua Opinião</h2>
+
+        <!-- Formulário de Cadastro -->
+        <section class="form-container">
+            <h3>Cadastro</h3>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="interesse">Interesse no Grupo:</label>
+                    <select id="interesse" name="interesse">
+                        <option value="informacoes">Quero mais informações</option>
+                        <option value="participar">Quero participar</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="form-submit-button">Enviar Cadastro</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Formulário de Feedback -->
+        <section class="form-container">
+            <h3>Deixe sua Opinião</h3>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="opiniao">Sua opinião:</label>
+                    <textarea id="opiniao" name="opiniao" rows="4" placeholder="O que podemos melhorar?" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="form-submit-button">Enviar Opinião</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+ 
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Grupo de Exposição. Todos os direitos reservados.</p>
+    </footer>
+
+     <!-- Botão para alternar o tema -->
+ <div class="floating-button theme-toggle">
+    <button id="themeButton" onclick="toggleTheme()">Alternar Tema</button>
+    </div>
+
+    <!-- Script para alternar o tema -->
+    <script>
+        function toggleTheme() {
+            const themeButton = document.getElementById("themeButton");
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+    
+            if (currentTheme === "dark") {
+                document.documentElement.setAttribute("data-theme", "light");
+                themeButton.textContent = "Modo Escuro";
+            } else {
+                document.documentElement.setAttribute("data-theme", "dark");
+                themeButton.textContent = "Modo Claro";
+            }
+        }
+    
+        // Definir o texto inicial do botão com base no tema
+        window.onload = () => {
+            const themeButton = document.getElementById("themeButton");
+            const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+            themeButton.textContent = currentTheme === "dark" ? "Modo Claro" : "Modo Escuro";
+        };
+    </script>
+</body>
+</html>

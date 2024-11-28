@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo de Exposição</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="floating-button">
+        <button id="toggleTheme">Alternar Tema</button>
+    </div>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Bem-vindo ao Grupo de Exposição</h1>
+        <nav>
+            <ul>
+                <li><a href="galeria.html">Curiosidades</a></li>
+                <li><a href="Cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Seção de Apresentação do Grupo -->
+        <section id="sobre">
+            <h2>Sobre o Grupo</h2>
+            <p>Conheça os membros do nosso grupo e suas trajetórias profissionais e acadêmicas.</p>
+
+            <!-- Contêiner de Integrantes -->
+            <div class="integrantes-container">
+                <!-- Integrante 1 -->
+                <article class="integrante">
+                    <img src="Img/FotosMatheus/Mat.jpg" alt="Foto de Perfil do Integrante 1" class="perfil">
+                    <h3>Matheus</h3>
+                    <p><strong>Competências:</strong> HTML, CSS, JavaScript, Java. </p>
+                    <p><strong>Experiências Profissionais:</strong> Projetos da Faculdade.</p>
+                    <p><strong>Escolaridade:</strong> Téc.Redes de Computadores.</p>
+                </article>
+
+                <!-- Integrante 2 -->
+                <article class="integrante">
+                    <img src="Img/FotosLucas/FotoIntegranteLucas.jpg" alt="Foto de Perfil do Integrante 2" class="perfil">
+                    <h3>Lucas Silva</h3>
+                    <p><strong>Competências:</strong> HTML, CSS, JavaScript, Java.</p>
+                    <p><strong>Experiências Profissionais:</strong> Auxiliar de TI na Tokstok, Auxiliar de TI na Expansão Empresarial, Auxilar de TI Estudio 2CA. </p>
+                    <p><strong>Escolaridade:</strong> Cusando Ensino Superior.</p>
+                </article>
+            <!-- Integrante 3 -->
+            <div class="integrante">
+                <img src="Img/FotosBJJ/BJJ.jpg" alt="Foto de Perfil do Integrante 3" class="perfil">
+                <h3>Luiz Henrique</h3>
+                <p><strong>Competências:</strong> HTML, CSS, Java, Python.</p>
+                <p><strong>Experiências Profissionais:</strong> Projetos da faculdade.</p>
+                <p><strong>Escolaridade:</strong> Cursando Ensino Superior.</p>
+            </div>
+
+            <!-- Integrante 4 -->
+            <div class="integrante">
+                <img src="Img/FotosMarcos/marco.jpg" alt="Foto de Perfil do Integrante 4" class="perfil">
+                <h3>Marcos</h3>
+                <p><strong>Competências:</strong> HTML, CSS, Algoritmo, Comunicação assertiva.</p>
+                <p><strong>Experiências Profissionais:</strong> Projetos da Faculdade.</p>
+                <p><strong>Escolaridade:</strong> Cursando Ensino Superior.</p>
+            </div>
+
+            <!-- Integrante 5 -->
+            <div class="integrante">
+                <img src="Img/FotosBrenno/Brenno.jpg" alt="Foto de Perfil do Integrante 5" class="perfil">
+                <h3>Brenno Felipe</h3>
+                <p><strong>Competências:</strong> HTML, CSS, JavaScript, Java, Angular.</p>
+                <p><strong>Experiências Profissionais:</strong> Projetos da Faculdade.</p>
+                <p><strong>Escolaridade:</strong> Cursando Ensino Superior.</p>
+            </div>
+
+            <!-- Integrante 6 -->
+            <div class="integrante">
+                <img src="Img/FotosWalber/walber.jpg" alt="Foto de Perfil do Integrante 6" class="perfil">
+                <h3>Walber Saturnino</h3>
+                <p><strong>Competências:</strong> HTML, CSS, JavaScript, Java.</p>
+                <p><strong>Experiências Profissionais:</strong> Projetos da Faculdade.</p>
+                <p><strong>Escolaridade:</strong> Téc.Redes de Computadores</p>
+            </div>
+        </div>
+    </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Grupo de Exposição. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        const toggleThemeButton = document.getElementById('toggleTheme');
+    
+        // Verificar o tema atual no armazenamento local
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+    
+        toggleThemeButton.textContent = currentTheme === 'dark' ? 'Modo Claro' : 'Modo Escuro';
+    
+        toggleThemeButton.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            toggleThemeButton.textContent = theme === 'dark' ? 'Modo Claro' : 'Modo Escuro';
+        });
+    </script>
+</body>
+</html>
